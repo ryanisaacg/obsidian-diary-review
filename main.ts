@@ -1,21 +1,11 @@
-import {
-	App,
-	Editor,
-	MarkdownView,
-	Modal,
-	Notice,
-	Plugin,
-	PluginSettingTab,
-	Setting,
-	WorkspaceLeaf,
-} from "obsidian";
+import { Plugin, WorkspaceLeaf } from "obsidian";
 import { WeekReviewView, WEEK_REVIEW_TYPE } from "week-review-view";
 
 export default class MyPlugin extends Plugin {
 	override async onload() {
 		this.registerView(WEEK_REVIEW_TYPE, (leaf) => new WeekReviewView(leaf));
 
-		this.addRibbonIcon("dice", "Activate view", () => {
+		this.addRibbonIcon("calendar-range", "Activate view", () => {
 			this.activateView();
 		});
 	}

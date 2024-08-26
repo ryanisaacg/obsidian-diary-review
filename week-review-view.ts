@@ -14,6 +14,7 @@ export class WeekReviewView extends ItemView {
 
 	constructor(leaf: WorkspaceLeaf) {
 		super(leaf);
+		this.icon = "calendar-range";
 	}
 
 	override getViewType() {
