@@ -77,7 +77,7 @@ export class WeekReviewView extends ItemView {
 	getWeekNotes(): TFile[] {
 		const entries: TFile[] = [];
 
-		for (let i = 1; i <= 7; i += 1) {
+		for (let i = 7; i >= 1; i -= 1) {
 			const date = new Date();
 			date.setDate(date.getDate() - i);
 			const path = dateToPath(date);
