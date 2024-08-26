@@ -5,8 +5,14 @@ export default class MyPlugin extends Plugin {
 	override async onload() {
 		this.registerView(WEEK_REVIEW_TYPE, (leaf) => new WeekReviewView(leaf));
 
-		this.addRibbonIcon("calendar-range", "Activate view", () => {
+		this.addRibbonIcon("calendar-range", "Week Review", () => {
 			this.activateView();
+		});
+		this.addCommand({
+			id: "open-week-review",
+			name: "Open Weekly Review",
+			icon: "calendar-range",
+			callback: () => this.activateView(),
 		});
 	}
 
